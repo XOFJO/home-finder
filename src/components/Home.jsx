@@ -57,6 +57,14 @@ function Home() {
                     <a
                       className="button"
                       onClick={() => {
+                        navigate('/Offer');
+                      }}
+                    >
+                      Offer
+                    </a>
+                    <a
+                      className="button"
+                      onClick={() => {
                         navigate('/signUp');
                       }}
                     >
