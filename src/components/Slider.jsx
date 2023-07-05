@@ -1,15 +1,15 @@
-import React from "react";
-import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import { collection, getDocs, query, orderBy, limit } from "firebase/firestore";
-import { db } from "../firebase.config";
-import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from "swiper";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/scrollbar";
-import Spinner from "./Spinner";
+import React from 'react';
+import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { collection, getDocs, query, orderBy, limit } from 'firebase/firestore';
+import { db } from '../firebase.config';
+import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
+import Spinner from './Spinner';
 
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 function Slider() {
@@ -19,8 +19,8 @@ function Slider() {
 
   useEffect(() => {
     const fetchListings = async () => {
-      const listingRef = collection(db, "listings");
-      const q = query(listingRef, orderBy("timestamp", "desc"), limit(5));
+      const listingRef = collection(db, 'listings');
+      const q = query(listingRef, orderBy('timestamp', 'desc'), limit(5));
       const querySnap = await getDocs(q);
       let listings = [];
       querySnap.forEach((doc) => {
@@ -43,7 +43,7 @@ function Slider() {
   return (
     listings && (
       <>
-        <p className="exploreHeading">Recommended</p>
+        <p className="exploreHeading">Recommended for you</p>
         <Swiper slidesPerView={1} pagination={{ clickable: true }}>
           {listings.map(({ data, id }) => {
             return (
@@ -55,10 +55,11 @@ function Slider() {
               >
                 <div
                   style={{
+                    margin: 'auto',
                     background: `url(${data.imageUrls[0]}) center no-repeat`,
-                    backgroundSize: "cover",
-                    height: "40vh",
-                    width: "100vw",
+                    backgroundSize: 'cover',
+                    height: '40vh',
+                    width: '40vw',
                   }}
                   className="swiperSlideDiv"
                 >
@@ -68,7 +69,7 @@ function Slider() {
                     {(
                       data.discountedPrice ?? data.regularPrice
                     ).toLocaleString()}
-                    {data.type === "rent" && " / Month"}
+                    {data.type === 'rent' && ' / Month'}
                   </p>
                 </div>
               </SwiperSlide>

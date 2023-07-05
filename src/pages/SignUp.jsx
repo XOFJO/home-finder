@@ -1,26 +1,28 @@
-import React from "react";
-import OAuth from "../components/OAuth";
-import { Link } from "react-router-dom";
-import { toast } from "react-toastify";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React from 'react';
+import OAuth from '../components/OAuth';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import {
   getAuth,
   updateProfile,
   createUserWithEmailAndPassword,
-} from "firebase/auth";
-import { setDoc, doc, serverTimestamp } from "firebase/firestore";
-import { db } from "../firebase.config";
-import visibilityIcon from "../assets/svg/visibilityIcon.svg";
-import { ReactComponent as ArrowRightIcon } from "../assets/svg/keyboardArrowRightIcon.svg";
+} from 'firebase/auth';
+import { setDoc, doc, serverTimestamp } from 'firebase/firestore';
+import { db } from '../firebase.config';
+import visibilityIcon from '../assets/svg/visibilityIcon.svg';
+import { ReactComponent as ArrowRightIcon } from '../assets/svg/keyboardArrowRightIcon.svg';
 
 function SignUp() {
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    password: "",
+    name: '',
+    email: '',
+    password: '',
   });
   const [showPassword, setShowPassword] = useState(false);
   const { name, email, password } = formData;
@@ -50,14 +52,15 @@ function SignUp() {
       const formDataCopy = { ...formData };
       delete formDataCopy.password;
       formDataCopy.timeStamp = serverTimestamp();
-      await setDoc(doc(db, "users", user.uid), formDataCopy);
-      navigate("/");
+      await setDoc(doc(db, 'users', user.uid), formDataCopy);
+      navigate('/');
     } catch (error) {
-      toast.error("Something went wrong with registration");
+      toast.error('Something went wrong with registration');
     }
   }
   return (
     <>
+      <Header />
       <div className="pageContainer">
         <header>
           <p className="pageHeader">Welcome Back!</p>
@@ -81,7 +84,7 @@ function SignUp() {
           />
           <div className="passwordInputDiv">
             <input
-              type={showPassword ? "text" : "password"}
+              type={showPassword ? 'text' : 'password'}
               className="passwordInput"
               id="password"
               placeholder="password"
@@ -100,11 +103,8 @@ function SignUp() {
           <Link to="/ForgotPassword" className="forgotPasswordLink">
             Forgot Password
           </Link>
-          <div className="signUpBar">
-            <p className="signUpText">Sign Up</p>
-            <button className="signUpButton">
-              <ArrowRightIcon fill="#ffffff" width="34px" height="34px" />
-            </button>
+          <div className="newPage">
+            <button className="button sign-btn">Sign Up</button>
           </div>
         </form>
         <OAuth />
@@ -112,6 +112,7 @@ function SignUp() {
           Sign In instead
         </Link>
       </div>
+      <Footer />
     </>
   );
 }

@@ -1,6 +1,6 @@
-import React from "react";
-import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import React from 'react';
+import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import {
   collection,
   getDocs,
@@ -9,11 +9,13 @@ import {
   orderBy,
   limit,
   startAfter,
-} from "firebase/firestore";
-import { db } from "../firebase.config";
-import { toast } from "react-toastify";
-import Spinner from "../components/Spinner";
-import ListingItem from "../components/ListingItem";
+} from 'firebase/firestore';
+import { db } from '../firebase.config';
+import { toast } from 'react-toastify';
+import Spinner from '../components/Spinner';
+import ListingItem from '../components/ListingItem';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 function Offer() {
   const [listings, setListings] = useState(null);
@@ -23,11 +25,11 @@ function Offer() {
   useEffect(() => {
     const fetchListings = async () => {
       try {
-        const listingRef = collection(db, "listings");
+        const listingRef = collection(db, 'listings');
         const q = query(
           listingRef,
-          where("offer", "==", true),
-          orderBy("timestamp", "desc"),
+          where('offer', '==', true),
+          orderBy('timestamp', 'desc'),
           limit(10)
         );
         const querySnap = await getDocs(q);
@@ -43,7 +45,7 @@ function Offer() {
         setListings(listings);
         setLoading(false);
       } catch (error) {
-        toast.error("Can not fetch listings!");
+        toast.error('Can not fetch listings!');
       }
     };
     fetchListings();
@@ -51,11 +53,11 @@ function Offer() {
 
   const onfetchMoreListings = async () => {
     try {
-      const listingRef = collection(db, "listings");
+      const listingRef = collection(db, 'listings');
       const q = query(
         listingRef,
-        where("offer", "==", true),
-        orderBy("timestamp", "desc"),
+        where('offer', '==', true),
+        orderBy('timestamp', 'desc'),
         startAfter(lastFetchedListing),
         limit(10)
       );
@@ -76,48 +78,48 @@ function Offer() {
       });
       setLoading(false);
     } catch (error) {
-      toast.error("Can not fetch listings!");
+      toast.error('Can not fetch listings!');
     }
   };
 
   return (
-    <div className="category">
-      <header>
-        <p className="pageHeader">
-          {params.categoryName === "rent"
-            ? "Places for rent"
-            : "Places for sale"}
-        </p>
-      </header>
-      {loading ? (
-        <Spinner />
-      ) : listings && listings.length > 0 ? (
-        <>
-          <main>
-            <ul className="categoryListings">
-              {listings.map((listing) => {
-                return (
-                  <ListingItem
-                    listing={listing.data}
-                    id={listing.id}
-                    key={listing.id}
-                  />
-                );
-              })}
-            </ul>
-          </main>
-          <br />
-          <br />
-          {lastFetchedListing && (
-            <p className="loadMore" onClick={onfetchMoreListings}>
-              Load More
-            </p>
-          )}
-        </>
-      ) : (
-        <p>There are no current offers</p>
-      )}
-    </div>
+    <>
+      <Header />
+      <div className="category">
+        <header>
+          <p className="pageHeader">Places for sale or rent with discount</p>
+        </header>
+        {loading ? (
+          <Spinner />
+        ) : listings && listings.length > 0 ? (
+          <>
+            <main>
+              <ul className="categoryListings">
+                {listings.map((listing) => {
+                  return (
+                    <ListingItem
+                      listing={listing.data}
+                      id={listing.id}
+                      key={listing.id}
+                    />
+                  );
+                })}
+              </ul>
+            </main>
+            <br />
+            <br />
+            {lastFetchedListing && (
+              <p className="loadMore" onClick={onfetchMoreListings}>
+                Load More
+              </p>
+            )}
+          </>
+        ) : (
+          <p>There are no current offers</p>
+        )}
+      </div>
+      <Footer />
+    </>
   );
 }
 

@@ -1,7 +1,7 @@
-import React from "react";
-import { useEffect, useState } from "react";
-import { getAuth, updateProfile } from "firebase/auth";
-import { useNavigate } from "react-router-dom";
+import React from 'react';
+import { useEffect, useState } from 'react';
+import { getAuth, updateProfile } from 'firebase/auth';
+import { useNavigate } from 'react-router-dom';
 import {
   updateDoc,
   doc,
@@ -11,13 +11,15 @@ import {
   where,
   orderBy,
   deleteDoc,
-} from "firebase/firestore";
-import { db } from "../firebase.config";
-import { toast } from "react-toastify";
-import { Link } from "react-router-dom";
-import arrowRight from "../assets/svg/keyboardArrowRightIcon.svg";
-import homeIcon from "../assets/svg/homeIcon.svg";
-import ListingItem from "../components/ListingItem";
+} from 'firebase/firestore';
+import { db } from '../firebase.config';
+import { toast } from 'react-toastify';
+import { Link } from 'react-router-dom';
+import arrowRight from '../assets/svg/keyboardArrowRightIcon.svg';
+import homeIcon from '../assets/svg/homeIcon.svg';
+import ListingItem from '../components/ListingItem';
+import Footer from '../components/Footer';
+import Header from '../components/Header';
 
 function Profile() {
   const auth = getAuth();
@@ -34,11 +36,11 @@ function Profile() {
 
   useEffect(() => {
     const fetchUserListing = async () => {
-      const listingRef = collection(db, "listings");
+      const listingRef = collection(db, 'listings');
       const q = query(
         listingRef,
-        where("userRef", "==", auth.currentUser.uid),
-        orderBy("timestamp", "desc")
+        where('userRef', '==', auth.currentUser.uid),
+        orderBy('timestamp', 'desc')
       );
       const querySnap = await getDocs(q);
       let listings = [];
@@ -53,7 +55,7 @@ function Profile() {
 
   function onLogOut() {
     auth.signOut();
-    navigate("/");
+    navigate('/signIn');
   }
 
   async function onSubmit() {
@@ -61,7 +63,7 @@ function Profile() {
       if (name !== auth.currentUser.displayName) {
         await updateProfile(auth.currentUser, { displayName: name });
 
-        const userRef = doc(db, "users", auth.currentUser.uid);
+        const userRef = doc(db, 'users', auth.currentUser.uid);
         await updateDoc(userRef, { name });
       }
     } catch (error) {
@@ -78,13 +80,13 @@ function Profile() {
   }
 
   async function onDelete(listingId) {
-    if (window.confirm("Are you sure you want to delete?")) {
-      await deleteDoc(doc(db, "listings", listingId));
+    if (window.confirm('Are you sure you want to delete?')) {
+      await deleteDoc(doc(db, 'listings', listingId));
       const updatedListings = listings.filter((listing) => {
         return listing.id !== listingId;
       });
       setListings(updatedListings);
-      toast.success("Successfully delete the listing!");
+      toast.success('Successfully delete the listing!');
     }
   }
 
@@ -93,74 +95,80 @@ function Profile() {
   };
 
   return (
-    <div className="profile">
-      <header className="profileHeader">
-        <p className="pageHeader">My profile</p>
-        <button type="button" className="logOut" onClick={onLogOut}>
-          Log Out
-        </button>
-      </header>
-      <main>
-        <div className="profileDetailsHeader">
-          <p className="profileDetailsText">Personal Details</p>
-          <p
-            className="changePersonalDetails"
-            onClick={() => {
-              changeDetails && onSubmit();
-              setChangeDetails((prev) => !prev);
-            }}
-          >
-            {changeDetails ? "done" : "change"}
-          </p>
-        </div>
-        <div className="profileCard">
-          <form>
-            <input
-              type="text"
-              className={changeDetails ? "profileNameActive" : "profileName"}
-              disabled={changeDetails ? false : true}
-              value={name}
-              id="name"
-              onChange={onChange}
-            />
-            <input
-              type="text"
-              className={"profileEmail"}
-              disabled={true}
-              value={email}
-              id="email"
-            />
-          </form>
-        </div>
-        <Link to="/createListing" className="createListing">
-          <img src={homeIcon} alt="home" />
-          <p>sell or rent your home</p>
-          <img src={arrowRight} alt="arrow Right" />
-        </Link>
-        {!loading && listings?.length > 0 && (
-          <>
-            <p className="listingText"> Your Listing</p>
-            <ul className="listingList">
-              {listings.map((listing) => {
-                return (
-                  <ListingItem
-                    key={listing.id}
-                    listing={listing.data}
-                    id={listing.id}
-                    onDelete={() => {
-                      onDelete(listing.id);
-                    }}
-                    onEdit={() => {
-                      onEdit(listing.id);
-                    }}
-                  />
-                );
-              })}
-            </ul>
-          </>
-        )}
-      </main>
-    </div>
+    <>
+      <Header />
+      <div className="profile">
+        <header className="profileHeader">
+          <p className="pageHeader">My profile</p>
+          <div className="newPage">
+            <button type="button" className="button" onClick={onLogOut}>
+              Log Out
+            </button>
+          </div>
+        </header>
+        <main>
+          <div className="profileDetailsHeader">
+            <p className="profileDetailsText">Personal Details</p>
+            <p
+              className="changePersonalDetails"
+              onClick={() => {
+                changeDetails && onSubmit();
+                setChangeDetails((prev) => !prev);
+              }}
+            >
+              {changeDetails ? 'done' : 'change'}
+            </p>
+          </div>
+          <div className="profileCard">
+            <form>
+              <input
+                type="text"
+                className={changeDetails ? 'profileNameActive' : 'profileName'}
+                disabled={changeDetails ? false : true}
+                value={name}
+                id="name"
+                onChange={onChange}
+              />
+              <input
+                type="text"
+                className={'profileEmail'}
+                disabled={true}
+                value={email}
+                id="email"
+              />
+            </form>
+          </div>
+          <Link to="/createListing" className="createListing">
+            <img src={homeIcon} alt="home" />
+            <p>sell or rent your home</p>
+            <img src={arrowRight} alt="arrow Right" />
+          </Link>
+          {!loading && listings?.length > 0 && (
+            <>
+              <p className="listingText"> Your Listing</p>
+              <ul className="listingList">
+                {listings.map((listing) => {
+                  return (
+                    <ListingItem
+                      key={listing.id}
+                      listing={listing.data}
+                      id={listing.id}
+                      onDelete={() => {
+                        onDelete(listing.id);
+                      }}
+                      onEdit={() => {
+                        onEdit(listing.id);
+                      }}
+                    />
+                  );
+                })}
+              </ul>
+            </>
+          )}
+        </main>
+      </div>
+      <Footer />
+    </>
   );
 }
 

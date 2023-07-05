@@ -1,18 +1,20 @@
-import React from "react";
-import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
-import { useState, useEffect } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
-import { doc, getDoc } from "firebase/firestore";
-import { getAuth } from "firebase/auth";
-import { db } from "../firebase.config";
-import Spinner from "../components/Spinner";
-import shareIcon from "../assets/svg/shareIcon.svg";
-import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from "swiper";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/scrollbar";
+import React from 'react';
+import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
+import { useState, useEffect } from 'react';
+import { Link, useNavigate, useParams } from 'react-router-dom';
+import { doc, getDoc } from 'firebase/firestore';
+import { getAuth } from 'firebase/auth';
+import { db } from '../firebase.config';
+import Spinner from '../components/Spinner';
+import shareIcon from '../assets/svg/shareIcon.svg';
+import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 function Listing() {
@@ -26,11 +28,10 @@ function Listing() {
 
   useEffect(() => {
     const fetchListing = async () => {
-      const docRef = doc(db, "listings", params.listingId);
+      const docRef = doc(db, 'listings', params.listingId);
       const docSnap = await getDoc(docRef);
 
       if (docSnap.exists()) {
-        console.log(docSnap.data());
         setListing(docSnap.data());
         setLoading(false);
       }
@@ -43,96 +44,113 @@ function Listing() {
   }
 
   return (
-    <main>
-      <Swiper slidesPerView={1} pagination={{ clickable: true }}>
-        {listing.imageUrls.map((url, index) => (
-          <SwiperSlide key={index}>
-            <div
-              style={{
-                background: `url(${url}) center no-repeat`,
-                backgroundSize: "cover",
-                width: "100vw",
-                height: "30vh ",
-              }}
-              className="swiperSlideDiv"
-            ></div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
-      <div
-        className="shareIconDiv"
-        onClick={() => {
-          navigator.clipboard.writeText(window.location.href);
-          setShareLInkCopied(true);
-          setTimeout(() => {
-            setShareLInkCopied(false);
-          }, 2000);
-        }}
-      >
-        <img src={shareIcon} alt="shareIcon" />
-      </div>
-      {shareLinkCopied && <p className="linkCopied">Link Copied!</p>}
-      <div className="listingDetails">
-        <p className="listingName">
-          {listing.name} -$
-          {listing.offer
-            ? listing.discountedPrice.toLocaleString()
-            : listing.regularPrice.toLocaleString()}
-        </p>
-        <p className="listingLocation">{listing.location}</p>
-        <p className="listingType">
-          For {listing.type === "rent" ? "Rent" : "Sale"}
-        </p>
-        {listing.offer && (
-          <p className="discountPrice">
-            ${listing.regularPrice - listing.discountedPrice} discount
-          </p>
-        )}
-        <ul className="listingDetailsList">
-          <li>
-            {listing.bedrooms > 1
-              ? `${listing.bedrooms} Bedrooms`
-              : "1 Bedroom"}
-          </li>
-          <li>
-            {listing.bathrooms > 1
-              ? `${listing.bathrooms} Bathrooms`
-              : "1 Bathroom"}
-          </li>
-          <li>{listing.parking && "Parking Spot"}</li>
-          <li>{listing.furnished && "Furnished"}</li>
-        </ul>
-        <p className="listingLocationTitle">Location</p>
-        <div className="leafletContainer">
-          <MapContainer
-            style={{ height: "100%", width: "100%" }}
-            center={[listing.geolocation.lat, listing.geolocation.lng]}
-            zoom={13}
-            scrollWheelZoom={false}
-          >
-            {" "}
-            <TileLayer
-              attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-            />
-            <Marker
-              position={[listing.geolocation.lat, listing.geolocation.lng]}
-            >
-              <Popup>{listing.location}</Popup>
-            </Marker>
-          </MapContainer>
-        </div>
+    <div className="newPage">
+      <div className="is-preload">
+        <div id="page-wrapper">
+          {/* <!-- Header --> */}
+          <Header />
 
-        {auth.currentUser?.uid !== listing.userRef && (
-          <Link
-            to={`/contact/${listing.userRef}?listingName=${listing.name}`}
-            className="primaryButton"
-          >
-            Contact landlord
-          </Link>
-        )}
+          {/* <!-- Main --> */}
+          <section id="main" className="container">
+            <header>
+              <h2>{listing.name}</h2>
+              <p>{listing.location}</p>
+            </header>
+            <div className="box">
+              <span className="image featured">
+                <div className="leafletContainer">
+                  <MapContainer
+                    style={{ height: '100%', width: '100%' }}
+                    center={[listing.geolocation.lat, listing.geolocation.lng]}
+                    zoom={13}
+                    scrollWheelZoom={false}
+                  >
+                    {' '}
+                    <TileLayer
+                      attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                      url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                    />
+                    <Marker
+                      position={[
+                        listing.geolocation.lat,
+                        listing.geolocation.lng,
+                      ]}
+                    >
+                      <Popup>{listing.location}</Popup>
+                    </Marker>
+                  </MapContainer>
+                </div>
+              </span>
+              <h3>
+                <div className="rentSale-tag">
+                  For{' '}
+                  <strong>{listing.type === 'rent' ? 'Rent' : 'Sale'}</strong> -
+                  {'         '}
+                  <strong>
+                    $
+                    {listing.offer
+                      ? listing.discountedPrice.toLocaleString()
+                      : listing.regularPrice.toLocaleString()}
+                  </strong>
+                </div>
+              </h3>
+              <div className="houseInfo">
+                {' '}
+                <p>
+                  {listing.offer && (
+                    <p>
+                      <strong>
+                        ${listing.regularPrice - listing.discountedPrice}
+                      </strong>{' '}
+                      discount
+                    </p>
+                  )}
+                </p>
+                <p>
+                  {listing.bedrooms > 1
+                    ? `${listing.bedrooms} Bedrooms`
+                    : '1 Bedroom'}
+                </p>
+                <p>
+                  {listing.bathrooms > 1
+                    ? `${listing.bathrooms} Bathrooms`
+                    : '1 Bathroom'}
+                </p>
+                <p>{listing.parking && 'Parking Spot'}</p>
+                <p>{listing.furnished && 'Furnished'}</p>
+              </div>
+              <Swiper slidesPerView={1} pagination={{ clickable: true }}>
+                {listing.imageUrls.map((url, index) => (
+                  <SwiperSlide key={index}>
+                    <div
+                      style={{
+                        margin: 'auto',
+                        background: `url(${url}) center no-repeat`,
+                        backgroundSize: 'cover',
+                        height: '60vh',
+                        width: '50vw',
+                      }}
+                      className="swiperSlideDiv"
+                    ></div>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+              {auth.currentUser?.uid !== listing.userRef && (
+                <Link
+                  to={`/contact/${listing.userRef}?listingName=${listing.name}`}
+                  className="contact-btn button"
+                >
+                  Contact landlord
+                </Link>
+              )}
+            </div>
+          </section>
+
+          {/* <!-- Footer --> */}
+          <Footer />
+        </div>
       </div>
-    </main>
+    </div>
   );
 }
 
