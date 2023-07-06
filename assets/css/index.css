@@ -1,11 +1,11 @@
-@import url("fontawesome-all.min.css");
-@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,300italic,400italic");
+@import url('fontawesome-all.min.css');
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,300italic,400italic');
 /*
 	Alpha by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&display=swap');
 * {
   box-sizing: border-box;
 }
@@ -15,7 +15,7 @@ html::-webkit-scrollbar {
 }
 
 body {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   background-color: #f2f4f8;
   margin: 0;
   box-sizing: border-box;
@@ -44,7 +44,7 @@ button {
   height: 3rem;
   width: 100%;
   outline: none;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   padding: 0 3rem;
   font-size: 1rem;
 }
@@ -199,12 +199,12 @@ button {
 
 .nameInput {
   margin-bottom: 2rem;
-  background: url("./assets/svg/badgeIcon.svg") #ffffff 2.5% center no-repeat;
+  background: url('./assets/svg/badgeIcon.svg') #ffffff 2.5% center no-repeat;
 }
 
 .emailInput {
   margin-bottom: 2rem;
-  background: url("./assets/svg/personIcon.svg") #ffffff 2.5% center no-repeat;
+  background: url('./assets/svg/personIcon.svg') #ffffff 2.5% center no-repeat;
 }
 
 .passwordInputDiv {
@@ -213,7 +213,7 @@ button {
 
 .passwordInput {
   margin-bottom: 2rem;
-  background: url("./assets/svg/lockIcon.svg") #ffffff 2.5% center no-repeat;
+  background: url('./assets/svg/lockIcon.svg') #ffffff 2.5% center no-repeat;
 }
 
 .showPassword {
@@ -346,7 +346,7 @@ button {
 .swiperSlideImg {
   width: 100%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .swiperSlideText {
@@ -398,7 +398,7 @@ button {
   width: 100%;
   border-radius: 1.5rem;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   margin: 0 auto;
 }
 
@@ -432,7 +432,7 @@ button {
   height: 100px;
   border-radius: 1.5rem;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 @media (min-width: 1024px) {
@@ -638,7 +638,7 @@ button {
 
 .logOut {
   cursor: pointer;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 1rem;
   font-weight: 600;
   color: #ffffff;
@@ -773,7 +773,7 @@ button {
 .formInputFile {
   border: none;
   outline: none;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .formInputSmall,
@@ -981,10 +981,11 @@ button {
 .homePage q {
   quotes: none;
 }
-.homePage blockquote:before, .homePage blockquote:after,
+.homePage blockquote:before,
+.homePage blockquote:after,
 .homePage q:before,
 .homePage q:after {
-  content: "";
+  content: '';
   content: none;
 }
 .homePage table {
@@ -1034,7 +1035,7 @@ button {
 .homePage select,
 .homePage textarea {
   color: #777;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   font-size: 16pt;
   font-weight: 300;
   line-height: 1.65em;
@@ -2538,9 +2539,9 @@ button {
   font-weight: 300;
   margin: 0 0 1em 0;
 }
-.homePage input[type=text],
-.homePage input[type=password],
-.homePage input[type=email],
+.homePage input[type='text'],
+.homePage input[type='password'],
+.homePage input[type='email'],
 .homePage select,
 .homePage textarea {
   -moz-appearance: none;
@@ -2556,16 +2557,16 @@ button {
   text-decoration: none;
   width: 100%;
 }
-.homePage input[type=text]:invalid,
-.homePage input[type=password]:invalid,
-.homePage input[type=email]:invalid,
+.homePage input[type='text']:invalid,
+.homePage input[type='password']:invalid,
+.homePage input[type='email']:invalid,
 .homePage select:invalid,
 .homePage textarea:invalid {
   box-shadow: none;
 }
-.homePage input[type=text]:focus,
-.homePage input[type=password]:focus,
-.homePage input[type=email]:focus,
+.homePage input[type='text']:focus,
+.homePage input[type='password']:focus,
+.homePage input[type='email']:focus,
 .homePage select:focus,
 .homePage textarea:focus {
   border-color: #e89980;
@@ -2590,17 +2591,17 @@ button {
 .homePage select::-ms-expand {
   display: none;
 }
-.homePage input[type=text],
-.homePage input[type=password],
-.homePage input[type=email],
+.homePage input[type='text'],
+.homePage input[type='password'],
+.homePage input[type='email'],
 .homePage select {
   height: 3em;
 }
 .homePage textarea {
   padding: 0.75em 1em;
 }
-.homePage input[type=checkbox],
-.homePage input[type=radio] {
+.homePage input[type='checkbox'],
+.homePage input[type='radio'] {
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
@@ -2611,8 +2612,8 @@ button {
   width: 1em;
   z-index: -1;
 }
-.homePage input[type=checkbox] + label,
-.homePage input[type=radio] + label {
+.homePage input[type='checkbox'] + label,
+.homePage input[type='radio'] + label {
   text-decoration: none;
   color: #777;
   cursor: pointer;
@@ -2623,8 +2624,8 @@ button {
   padding-right: 0.75em;
   position: relative;
 }
-.homePage input[type=checkbox] + label:before,
-.homePage input[type=radio] + label:before {
+.homePage input[type='checkbox'] + label:before,
+.homePage input[type='radio'] + label:before {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   display: inline-block;
@@ -2633,15 +2634,15 @@ button {
   text-rendering: auto;
   line-height: 1;
   text-transform: none !important;
-  font-family: "Font Awesome 5 Free";
+  font-family: 'Font Awesome 5 Free';
   font-weight: 900;
 }
-.homePage input[type=checkbox] + label:before,
-.homePage input[type=radio] + label:before {
+.homePage input[type='checkbox'] + label:before,
+.homePage input[type='radio'] + label:before {
   background: #f8f8f8;
   border-radius: 6px;
   border: solid 1px #e5e5e5;
-  content: "";
+  content: '';
   display: inline-block;
   font-size: 0.8em;
   height: 2.25em;
@@ -2652,22 +2653,22 @@ button {
   top: 0;
   width: 2.25em;
 }
-.homePage input[type=checkbox]:checked + label:before,
-.homePage input[type=radio]:checked + label:before {
+.homePage input[type='checkbox']:checked + label:before,
+.homePage input[type='radio']:checked + label:before {
   background: #666;
   border-color: #666;
   color: #ffffff;
-  content: "\f00c";
+  content: '\f00c';
 }
-.homePage input[type=checkbox]:focus + label:before,
-.homePage input[type=radio]:focus + label:before {
+.homePage input[type='checkbox']:focus + label:before,
+.homePage input[type='radio']:focus + label:before {
   border-color: #e89980;
   box-shadow: 0 0 0 1px #e89980;
 }
-.homePage input[type=checkbox] + label:before {
+.homePage input[type='checkbox'] + label:before {
   border-radius: 6px;
 }
-.homePage input[type=radio] + label:before {
+.homePage input[type='radio'] + label:before {
   border-radius: 100%;
 }
 .homePage ::-webkit-input-placeholder {
@@ -2709,7 +2710,7 @@ button {
 }
 .homePage .box.features .features-row:after {
   clear: both;
-  content: "";
+  content: '';
   display: block;
 }
 .homePage .box.features .features-row section {
@@ -2725,7 +2726,7 @@ button {
 }
 .homePage .box.features .features-row section:nth-child(2n):before {
   background: #e5e5e5;
-  content: "";
+  content: '';
   display: block;
   height: 100%;
   margin-left: -3em;
@@ -2793,7 +2794,7 @@ button {
   text-rendering: auto;
   line-height: 1;
   text-transform: none !important;
-  font-family: "Font Awesome 5 Free";
+  font-family: 'Font Awesome 5 Free';
   font-weight: 400;
 }
 .homePage .icon > .label {
@@ -2806,7 +2807,7 @@ button {
   font-weight: 900;
 }
 .homePage .icon.brands:before {
-  font-family: "Font Awesome 5 Brands";
+  font-family: 'Font Awesome 5 Brands';
 }
 .homePage .icon.major {
   background: #666;
@@ -2994,16 +2995,16 @@ button {
   .homePage ul.actions:not(.fixed) li:first-child {
     padding-top: 0;
   }
-  .homePage ul.actions:not(.fixed) li input[type=submit],
-  .homePage ul.actions:not(.fixed) li input[type=reset],
-  .homePage ul.actions:not(.fixed) li input[type=button],
+  .homePage ul.actions:not(.fixed) li input[type='submit'],
+  .homePage ul.actions:not(.fixed) li input[type='reset'],
+  .homePage ul.actions:not(.fixed) li input[type='button'],
   .homePage ul.actions:not(.fixed) li button,
   .homePage ul.actions:not(.fixed) li .button {
     width: 100%;
   }
-  .homePage ul.actions:not(.fixed) li input[type=submit].icon:before,
-  .homePage ul.actions:not(.fixed) li input[type=reset].icon:before,
-  .homePage ul.actions:not(.fixed) li input[type=button].icon:before,
+  .homePage ul.actions:not(.fixed) li input[type='submit'].icon:before,
+  .homePage ul.actions:not(.fixed) li input[type='reset'].icon:before,
+  .homePage ul.actions:not(.fixed) li input[type='button'].icon:before,
   .homePage ul.actions:not(.fixed) li button.icon:before,
   .homePage ul.actions:not(.fixed) li .button.icon:before {
     margin-left: -0.5em;
@@ -3022,7 +3023,7 @@ button {
   border-left: 0;
   border-right: 0;
 }
-.homePage table tbody tr:nth-child(2n+1) {
+.homePage table tbody tr:nth-child(2n + 1) {
   background-color: #f8f8f8;
 }
 .homePage table td {
@@ -3061,9 +3062,9 @@ button {
 .homePage table.alt tfoot {
   border-top: 0;
 }
-.homePage input[type=submit],
-.homePage input[type=reset],
-.homePage input[type=button],
+.homePage input[type='submit'],
+.homePage input[type='reset'],
+.homePage input[type='button'],
 .homePage .button {
   -moz-appearance: none;
   -webkit-appearance: none;
@@ -3083,102 +3084,103 @@ button {
   text-decoration: none;
   white-space: nowrap;
 }
-.homePage input[type=submit]:hover,
-.homePage input[type=reset]:hover,
-.homePage input[type=button]:hover,
+.homePage input[type='submit']:hover,
+.homePage input[type='reset']:hover,
+.homePage input[type='button']:hover,
 .homePage .button:hover {
   background-color: #737373;
 }
-.homePage input[type=submit]:active,
-.homePage input[type=reset]:active,
-.homePage input[type=button]:active,
+.homePage input[type='submit']:active,
+.homePage input[type='reset']:active,
+.homePage input[type='button']:active,
 .homePage .button:active {
   background-color: #595959;
 }
-.homePage input[type=submit].icon,
-.homePage input[type=reset].icon,
-.homePage input[type=button].icon,
+.homePage input[type='submit'].icon,
+.homePage input[type='reset'].icon,
+.homePage input[type='button'].icon,
 .homePage .button.icon {
   padding-left: 1.35em;
 }
-.homePage input[type=submit].icon:before,
-.homePage input[type=reset].icon:before,
-.homePage input[type=button].icon:before,
+.homePage input[type='submit'].icon:before,
+.homePage input[type='reset'].icon:before,
+.homePage input[type='button'].icon:before,
 .homePage .button.icon:before {
   margin-right: 0.5em;
 }
-.homePage input[type=submit].fit,
-.homePage input[type=reset].fit,
-.homePage input[type=button].fit,
+.homePage input[type='submit'].fit,
+.homePage input[type='reset'].fit,
+.homePage input[type='button'].fit,
 .homePage .button.fit {
   width: 100%;
 }
-.homePage input[type=submit].small,
-.homePage input[type=reset].small,
-.homePage input[type=button].small,
+.homePage input[type='submit'].small,
+.homePage input[type='reset'].small,
+.homePage input[type='button'].small,
 .homePage .button.small {
   font-size: 0.8em;
   height: 2.7em;
   line-height: 2.7em;
 }
-.homePage input[type=submit].large,
-.homePage input[type=reset].large,
-.homePage input[type=button].large,
+.homePage input[type='submit'].large,
+.homePage input[type='reset'].large,
+.homePage input[type='button'].large,
 .homePage .button.large {
   font-size: 1.25em;
   height: 2.7em;
   line-height: 2.7em;
 }
-.homePage input[type=submit].alt,
-.homePage input[type=reset].alt,
-.homePage input[type=button].alt,
+.homePage input[type='submit'].alt,
+.homePage input[type='reset'].alt,
+.homePage input[type='button'].alt,
 .homePage .button.alt {
   background-color: transparent;
   box-shadow: inset 0 0 0 2px #e5e5e5;
   color: #777;
 }
-.homePage input[type=submit].alt:hover,
-.homePage input[type=reset].alt:hover,
-.homePage input[type=button].alt:hover,
+.homePage input[type='submit'].alt:hover,
+.homePage input[type='reset'].alt:hover,
+.homePage input[type='button'].alt:hover,
 .homePage .button.alt:hover {
   background-color: #f8f8f8;
 }
-.homePage input[type=submit].alt:active,
-.homePage input[type=reset].alt:active,
-.homePage input[type=button].alt:active,
+.homePage input[type='submit'].alt:active,
+.homePage input[type='reset'].alt:active,
+.homePage input[type='button'].alt:active,
 .homePage .button.alt:active {
   background-color: #f0f0f0;
 }
-.homePage input[type=submit].alt.icon:before,
-.homePage input[type=reset].alt.icon:before,
-.homePage input[type=button].alt.icon:before,
+.homePage input[type='submit'].alt.icon:before,
+.homePage input[type='reset'].alt.icon:before,
+.homePage input[type='button'].alt.icon:before,
 .homePage .button.alt.icon:before {
   color: #999;
 }
-.homePage input[type=submit].primary,
-.homePage input[type=reset].primary,
-.homePage input[type=button].primary,
+.homePage input[type='submit'].primary,
+.homePage input[type='reset'].primary,
+.homePage input[type='button'].primary,
 .homePage .button.primary {
   background-color: #e89980;
   color: #ffffff !important;
 }
-.homePage input[type=submit].primary:hover,
-.homePage input[type=reset].primary:hover,
-.homePage input[type=button].primary:hover,
+.homePage input[type='submit'].primary:hover,
+.homePage input[type='reset'].primary:hover,
+.homePage input[type='button'].primary:hover,
 .homePage .button.primary:hover {
   background-color: #ecaa96;
 }
-.homePage input[type=submit].primary:active,
-.homePage input[type=reset].primary:active,
-.homePage input[type=button].primary:active,
+.homePage input[type='submit'].primary:active,
+.homePage input[type='reset'].primary:active,
+.homePage input[type='button'].primary:active,
 .homePage .button.primary:active {
   background-color: #e4886a;
 }
-.homePage input[type=submit].disabled, .homePage input[type=submit]:disabled,
-.homePage input[type=reset].disabled,
-.homePage input[type=reset]:disabled,
-.homePage input[type=button].disabled,
-.homePage input[type=button]:disabled,
+.homePage input[type='submit'].disabled,
+.homePage input[type='submit']:disabled,
+.homePage input[type='reset'].disabled,
+.homePage input[type='reset']:disabled,
+.homePage input[type='button'].disabled,
+.homePage input[type='button']:disabled,
 .homePage .button.disabled,
 .homePage .button:disabled {
   background-color: #777 !important;
@@ -3275,23 +3277,23 @@ button {
   margin: 0 0 0 0.5em;
   position: relative;
 }
-.homePage #header input[type=submit],
-.homePage #header input[type=reset],
-.homePage #header input[type=button],
+.homePage #header input[type='submit'],
+.homePage #header input[type='reset'],
+.homePage #header input[type='button'],
 .homePage #header .button {
   background-color: transparent;
   box-shadow: inset 0 0 0 2px #999;
   color: #fff;
 }
-.homePage #header input[type=submit]:hover,
-.homePage #header input[type=reset]:hover,
-.homePage #header input[type=button]:hover,
+.homePage #header input[type='submit']:hover,
+.homePage #header input[type='reset']:hover,
+.homePage #header input[type='button']:hover,
 .homePage #header .button:hover {
   background-color: rgba(153, 153, 153, 0.25);
 }
-.homePage #header input[type=submit]:active,
-.homePage #header input[type=reset]:active,
-.homePage #header input[type=button]:active,
+.homePage #header input[type='submit']:active,
+.homePage #header input[type='reset']:active,
+.homePage #header input[type='button']:active,
 .homePage #header .button:active {
   background-color: rgba(153, 153, 153, 0.5);
 }
@@ -3319,28 +3321,29 @@ button {
 .homePage #header.alt nav > ul > li.active a:not(.button) {
   background-color: rgba(255, 255, 255, 0.2);
 }
-.homePage #header.alt input[type=submit],
-.homePage #header.alt input[type=reset],
-.homePage #header.alt input[type=button],
+.homePage #header.alt input[type='submit'],
+.homePage #header.alt input[type='reset'],
+.homePage #header.alt input[type='button'],
 .homePage #header.alt .button {
   box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.5);
 }
-.homePage #header.alt input[type=submit]:hover,
-.homePage #header.alt input[type=reset]:hover,
-.homePage #header.alt input[type=button]:hover,
+.homePage #header.alt input[type='submit']:hover,
+.homePage #header.alt input[type='reset']:hover,
+.homePage #header.alt input[type='button']:hover,
 .homePage #header.alt .button:hover {
   background-color: rgba(255, 255, 255, 0.1);
 }
-.homePage #header.alt input[type=submit]:active,
-.homePage #header.alt input[type=reset]:active,
-.homePage #header.alt input[type=button]:active,
+.homePage #header.alt input[type='submit']:active,
+.homePage #header.alt input[type='reset']:active,
+.homePage #header.alt input[type='button']:active,
 .homePage #header.alt .button:active {
   background-color: rgba(255, 255, 255, 0.2);
 }
 .homePage .dropotron {
   background: #fff;
   border-radius: 6px;
-  box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.065), inset 0 -1px 0 0 #fff, inset 0 0 0 1px rgba(229, 229, 229, 0.5);
+  box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.065), inset 0 -1px 0 0 #fff,
+    inset 0 0 0 1px rgba(229, 229, 229, 0.5);
   list-style: none;
   margin: calc(-0.5em + 1px) 0 0 1px;
   padding: 0.5em 0;
@@ -3363,7 +3366,8 @@ button {
   border-top: 0;
 }
 .homePage .dropotron li.active > a,
-.homePage .dropotron li.active > span, .homePage .dropotron li:hover > a,
+.homePage .dropotron li.active > span,
+.homePage .dropotron li:hover > a,
 .homePage .dropotron li:hover > span {
   background: #e89980;
   color: #ffffff;
@@ -3379,7 +3383,7 @@ button {
   border-bottom: 0;
   border-right: 0;
   box-shadow: -0.25em -0.125em 0.125em 0 rgba(0, 0, 0, 0.015);
-  content: "";
+  content: '';
   display: block;
   height: 0.75em;
   position: absolute;
@@ -3391,7 +3395,7 @@ button {
 .homePage #banner {
   background-attachment: scroll, fixed;
   background-color: #666;
-  background-image: url("images/overlay.png"), url("images/banner.jpg");
+  background-image: url('images/overlay.png'), url('images/banner.jpg');
   background-position: top left, center center;
   background-repeat: repeat, no-repeat;
   background-size: auto, cover;
@@ -3419,30 +3423,30 @@ button {
   font-size: 1.25em;
   margin-bottom: 1.75em;
 }
-.homePage #banner input[type=submit],
-.homePage #banner input[type=reset],
-.homePage #banner input[type=button],
+.homePage #banner input[type='submit'],
+.homePage #banner input[type='reset'],
+.homePage #banner input[type='button'],
 .homePage #banner .button {
   background-color: transparent;
   box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.5);
   color: #fff;
   min-width: 12em;
 }
-.homePage #banner input[type=submit]:hover,
-.homePage #banner input[type=reset]:hover,
-.homePage #banner input[type=button]:hover,
+.homePage #banner input[type='submit']:hover,
+.homePage #banner input[type='reset']:hover,
+.homePage #banner input[type='button']:hover,
 .homePage #banner .button:hover {
   background-color: rgba(255, 255, 255, 0.1);
 }
-.homePage #banner input[type=submit]:active,
-.homePage #banner input[type=reset]:active,
-.homePage #banner input[type=button]:active,
+.homePage #banner input[type='submit']:active,
+.homePage #banner input[type='reset']:active,
+.homePage #banner input[type='button']:active,
 .homePage #banner .button:active {
   background-color: rgba(255, 255, 255, 0.2);
 }
-.homePage #banner input[type=submit].primary,
-.homePage #banner input[type=reset].primary,
-.homePage #banner input[type=button].primary,
+.homePage #banner input[type='submit'].primary,
+.homePage #banner input[type='reset'].primary,
+.homePage #banner input[type='button'].primary,
 .homePage #banner .button.primary {
   background: #fff;
   color: #666 !important;
@@ -3522,26 +3526,26 @@ button {
   max-width: 100%;
   width: 25em;
 }
-.homePage #cta input[type=submit],
-.homePage #cta input[type=reset],
-.homePage #cta input[type=button],
+.homePage #cta input[type='submit'],
+.homePage #cta input[type='reset'],
+.homePage #cta input[type='button'],
 .homePage #cta .button {
   box-shadow: none;
   background: #fff;
   color: #e89980;
 }
-.homePage #cta input[type=text],
-.homePage #cta input[type=password],
-.homePage #cta input[type=email],
+.homePage #cta input[type='text'],
+.homePage #cta input[type='password'],
+.homePage #cta input[type='email'],
 .homePage #cta select,
 .homePage #cta textarea {
   color: #ffffff;
   background: rgba(255, 255, 255, 0.15);
   border: 0;
 }
-.homePage #cta input[type=text]:focus,
-.homePage #cta input[type=password]:focus,
-.homePage #cta input[type=email]:focus,
+.homePage #cta input[type='text']:focus,
+.homePage #cta input[type='password']:focus,
+.homePage #cta input[type='email']:focus,
 .homePage #cta select:focus,
 .homePage #cta textarea:focus {
   box-shadow: inset 0 0 0 2px #fff;
@@ -3704,14 +3708,14 @@ button {
     text-rendering: auto;
     line-height: 1;
     text-transform: none !important;
-    font-family: "Font Awesome 5 Free";
+    font-family: 'Font Awesome 5 Free';
     font-weight: 900;
   }
   .homePage #navButton .toggle:before {
     background: rgba(192, 192, 192, 0.75);
     border-radius: 6px;
     color: #fff;
-    content: "\f0c9";
+    content: '\f0c9';
     display: block;
     font-size: 16px;
     height: 2.25em;
@@ -3971,4 +3975,17 @@ button {
   .homePage #cta {
     padding: 2.5em 1em 3em 1em;
   }
-}/*# sourceMappingURL=index.css.map */
+}
+#pageHeader {
+  margin-bottom: 2rem;
+  z-index: -1;
+}
+
+.Toastify__toast-container {
+  position: absolute;
+}
+
+.Toastify__toast-container {
+  margin-top: 20rem;
+}
+/*# sourceMappingURL=index.css.map */
