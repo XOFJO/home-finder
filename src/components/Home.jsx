@@ -89,6 +89,18 @@ function Home() {
             {loggedIn ? (
               <>
                 <h2>Welcome back, {userName}!</h2>
+                <ul className="actions special">
+                  <li>
+                    <a
+                      className="button primary"
+                      onClick={() => {
+                        navigate('/profile');
+                      }}
+                    >
+                      View your profile
+                    </a>
+                  </li>
+                </ul>
                 <p>
                   Are you ready to embark on the journey of finding a new home?
                 </p>
