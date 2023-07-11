@@ -3,6 +3,8 @@ import Slider from '../components/Slider';
 import Spinner from './Spinner';
 import { useNavigate } from 'react-router-dom';
 import { useAuthStatus } from '../hooks/useAuthStatus';
+import { signInWithEmailAndPassword, getAuth } from 'firebase/auth';
+import { toast } from 'react-toastify';
 import Header from './Header';
 import Footer from './Footer';
 
@@ -11,6 +13,21 @@ function Home() {
   const { loggedIn, checkingStatus, userName } = useAuthStatus();
   if (checkingStatus) {
     return <Spinner />;
+  }
+  async function signInDemo(e) {
+    try {
+      const auth = getAuth();
+      const userCredential = await signInWithEmailAndPassword(
+        auth,
+        'jane@gmail.com',
+        '123456'
+      );
+      if (userCredential.user) {
+        navigate('/');
+      }
+    } catch (error) {
+      toast.error('Bad credential');
+    }
   }
   return (
     <div className="newPage">
@@ -113,6 +130,20 @@ function Home() {
                   You've come to the right place.
                 </p>
                 <ul className="actions special">
+                  <li>
+                    <a
+                      className="button primary"
+                      onClick={() => {
+                        const inner = async () => {
+                          await signInDemo();
+                          navigate('/profile');
+                        };
+                        inner();
+                      }}
+                    >
+                      Sign in Demo Account
+                    </a>
+                  </li>
                   <li>
                     <a
                       className="button primary"
