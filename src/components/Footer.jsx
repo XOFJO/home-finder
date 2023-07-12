@@ -16,11 +16,6 @@ function Footer() {
                 <span className="label">Github</span>
               </a>
             </li>
-            <li>
-              <a href="#" className="icon brands fa-linkedin">
-                <span className="label">Linkedin</span>
-              </a>
-            </li>
           </ul>
           <ul className="copyright">
             <li>&copy; Yiheng Ding. All rights reserved.</li>
