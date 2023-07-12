@@ -2,7 +2,7 @@
 
 ## This project enables users to sign in and create listings for selling or renting items.
 
-Users have the option to sign in or sign up using their email or Google account. Once signed in, they gain the ability to create listings for selling or renting. Moreover, the address of their house or apartment will be automatically set on the map through the utilization of the Geocoding API. To store all user data, I implemented Firebase.
+I constructed this website using React and Firebase. Users have the flexibility to sign in or sign up using their email or Google account. Once authenticated, they are empowered to create listings for selling or renting. Additionally, the Geocoding API automatically sets the address of their house or apartment on the map. To store all data, Firebase was implemented.
 
 ## Overview
 
