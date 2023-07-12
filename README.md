@@ -1,70 +1,35 @@
-# Getting Started with Create React App
+# Home Finder project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## This project enables users to sign in and create listings for selling or renting items.
 
-## Available Scripts
+Users have the option to sign in or sign up using their email or Google account. Once signed in, they gain the ability to create listings for selling or renting. Moreover, the address of their house or apartment will be automatically set on the map through the utilization of the Geocoding API. To store all user data, I implemented Firebase.
 
-In the project directory, you can run:
+## Overview
 
-### `npm start`
+![overview](https://github.com/XOFJO/movie-tv-search/assets/38542637/7b373dca-f1ae-41ea-a061-1305920006ea)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Viewing rent and sale listings
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+![saleAndRent](https://github.com/XOFJO/movie-tv-search/assets/38542637/93cf5580-814f-464a-9b0f-d70ba9c5edc6)
 
-### `npm test`
+## Viewing listings details
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![listingDetails](https://github.com/XOFJO/movie-tv-search/assets/38542637/32498071-3ebb-40c8-8735-88be326a28c0)
 
-### `npm run build`
+## Could sign in with Demo account
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![demmoAccount](https://github.com/XOFJO/movie-tv-search/assets/38542637/9f2f714e-c80c-4af2-bc3b-77f0f30cc296)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Sign in process via email
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![siginInProcess](https://github.com/XOFJO/movie-tv-search/assets/38542637/7b5c28b4-e9b7-4c22-894f-0dd6eb09c5fb)
 
-### `npm run eject`
+## Sign up process via email
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+![signUpProcess](https://github.com/XOFJO/movie-tv-search/assets/38542637/cf5012c1-093f-4242-9ee2-1ded20f40bde)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Create Listings
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+![createListings](https://github.com/XOFJO/movie-tv-search/assets/38542637/f8ff4f74-2fda-487c-a450-96a613bdc102)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Thank you for watching
